@@ -18,7 +18,7 @@ steps:
   inputs:
     version: '$(dotnetSdkVersion)'
 
-- task: Npm@2
+- task: Npm@1
   inputs:
     command: 'install'
     verbose: false
