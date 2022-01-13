@@ -2,7 +2,7 @@ trigger:
 - '*'
 
 pool:
-  vmImage: 'ubuntu-19.04'
+  vmImage: 'ubuntu-20.04'
 
   demands:
   - npm
@@ -18,10 +18,10 @@ steps:
   inputs:
     version: '$(dotnetSdkVersion)'
 
-- task: Npm@1
+- task: Npm@2
   inputs:
     command: 'install'
-    verbose: true
+    verbose: false
 
 - script: './node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)'
   displayName: 'Compile Sass assets'
